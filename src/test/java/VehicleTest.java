@@ -55,6 +55,8 @@ public class VehicleTest {
         assertEquals(4, vehicle.getTyreNumber());
     }
 
-
-
+    @Test
+    public void canRun() {
+        assertEquals("This vehicle can run", vehicle.run());
+    }
 }

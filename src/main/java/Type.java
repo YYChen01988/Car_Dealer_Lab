@@ -1,6 +1,7 @@
 public enum Type {
 
     CAR("Engine"),
+    TRUCK("ICE Engine"),
     ELECTRIC("Battery"),
     HYBRID("Engine and Battery"),
     TANK("Engine");
@@ -15,4 +16,6 @@ public enum Type {
     public String getEngineType(){
         return value;
     }
+
+
 }

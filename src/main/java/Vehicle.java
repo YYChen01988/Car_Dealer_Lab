@@ -31,7 +31,7 @@ public class Vehicle {
     }
 
     public void addTyre(Tyre tyre) {
-        tyres.add(tyre);
+        this.tyres.add(tyre);
     }
 
     public int getTyreNumber() {
@@ -40,5 +40,9 @@ public class Vehicle {
 
     public Type getType() {
         return type;
+    }
+
+    public String run(){
+        return "This vehicle can run";
     }
 }
