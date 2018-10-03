@@ -1,3 +1,5 @@
+package Vehicles;
+
 import Component.Engine;
 import Component.Tyre;
 
@@ -10,7 +12,7 @@ public class Vehicle {
     private int price;
     private String color;
 
-    public Vehicle(Engine engine,Type type, ArrayList<Tyre> tyres, int price, String color) {
+    public Vehicle(Engine engine, Type type, ArrayList<Tyre> tyres, int price, String color) {
         this.engine = engine;
         this.tyres = new ArrayList<>();
         this.type = type;
