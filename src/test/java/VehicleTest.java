@@ -1,4 +1,5 @@
 import Component.Engine;
+import Component.EngineType;
 import Component.Tyre;
 import Vehicles.Vehicle;
 import org.junit.Before;
@@ -17,13 +18,14 @@ public class VehicleTest {
 
     @Before
     public void setUp(){
-        engine1 = new Engine(100);
+        engine1 = new Engine(100, EngineType.ENGINE);
         tyre1 = new Tyre();
         tyre2 = new Tyre();
         tyre3 = new Tyre();
         tyre4 = new Tyre();
         tyres = new ArrayList<>();
-        vehicle = new Vehicle(engine1, Type.CAR, tyres, 500, "Black");
+        vehicle = new Vehicle(engine1, tyres, 500, "Black", 0) {
+        };
         vehicle.addTyre(tyre1);
         vehicle.addTyre(tyre2);
         vehicle.addTyre(tyre3);
@@ -40,10 +42,10 @@ public class VehicleTest {
         assertEquals("Black", vehicle.getColor());
     }
 
-    @Test
-    public void canGetVehicleType() {
-        assertEquals(Type.CAR, vehicle.getType());
-    }
+//    @Test
+//    public void canGetVehicleType() {
+//        assertEquals(Component.Tyre.Type.CAR, vehicle.getType());
+//    }
 
     @Test
     public void canGetEngineHorsePower() {
@@ -57,6 +59,7 @@ public class VehicleTest {
 
     @Test
     public void canRun() {
-        assertEquals("This vehicle can run", vehicle.run());
+        vehicle.run(10);
+        assertEquals(10, vehicle.getMiles());
     }
 }

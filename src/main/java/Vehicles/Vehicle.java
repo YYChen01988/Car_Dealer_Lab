@@ -5,19 +5,26 @@ import Component.Tyre;
 
 import java.util.ArrayList;
 
-public class Vehicle {
+public abstract class Vehicle implements Runable {
     private Engine engine;
     private ArrayList<Tyre> tyres;
-    private Type type;
+//    private Component.Tyre.Type type;
     private int price;
     private String color;
+    private int miles;
 
-    public Vehicle(Engine engine, Type type, ArrayList<Tyre> tyres, int price, String color) {
+    public Vehicle(Engine engine,  ArrayList<Tyre> tyres, int price, String color, int miles) {
         this.engine = engine;
         this.tyres = new ArrayList<>();
-        this.type = type;
+//        this.type = type;
         this.price = price;
         this.color = color;
+        this.miles = 0;
+
+    }
+
+    public int getMiles() {
+        return miles;
     }
 
     public int getPrice() {
@@ -40,11 +47,14 @@ public class Vehicle {
         return tyres.size();
     }
 
-    public Type getType() {
-        return type;
-    }
+//    public Component.Tyre.Type getType() {
+//        return type;
+//    }
 
-    public String run(){
-        return "This vehicle can run";
+
+    @Override
+    public void run(int distance) {
+        this.miles += distance;
+
     }
 }
